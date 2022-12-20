@@ -1,0 +1,2 @@
+class AccountInfosController < ApplicationController
+end

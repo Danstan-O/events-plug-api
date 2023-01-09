@@ -15,6 +15,7 @@ events2 = Event.create(name: "solFest", address: "1234-kimathi street", location
      category: "party time", description: "sauti sol will be performing in one of the biggest party animal events that has ever been held in kenya", like: :faulse, 
      start_date: "18/12/2022", end_date: "19/12/2022", start_time: "9 p.m", end_time: "chiew")
 
-     events3 = Event.create(name: "Sauti africa", address: "199-omwogo street", location: "kare4",
-        category: "general", description: "This is a general meeting bringing together all people interested in auditioning to become artists", like: :waah, 
-        start_date: "18/12/2022", end_date: "19/12/2022", start_time: "11 p.m", end_time: "chiew")
+events3 = Event.create(name: "Sauti africa", address: "199-omwogo street", location: "kare4",
+  category: "general", description: "This is a general meeting bringing together all people interested in auditioning to become artists", like: :waah, 
+    
+  start_date: "18/12/2022", end_date: "19/12/2022", start_time: "11 p.m", end_time: "chiew")

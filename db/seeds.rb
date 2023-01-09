@@ -3,6 +3,7 @@
 #
 # Examples:
 #
+
 #   movies = Movie.create([{ name: Star Wars }, { name: Lord of the Rings }])
 #   Character.create(name: Luke, movie: movies.first)
 
@@ -11,3 +12,4 @@ event1 = Event.create!([name: "Blockchain Summit", address: "3422-00100", locati
 user1 = User.create!([name: "Admin", email: "admin@example.com", role: "admin", password: "admin", password_confirmation: "admin"])
 user2 = User.create!([name: "Sammie", email: "SamOrganizer@example.com", role: "organizer", password: "organizer", password_confirmation: "organizer"])
 user3 = User.create!([name: "Mary", email: "mary@example.com", role: "user", password: "user3", password_confirmation: "user3"])
+

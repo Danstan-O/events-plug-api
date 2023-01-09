@@ -3,13 +3,19 @@ class EventsController < ApplicationController
 
     def index
         events = Event.all
-        render json: events, except: [:created_at, :updated_at]
+
+
+        render json: events
+
     end
 
     def show
         events = Event.find_by(id: params[:id])
         if events
-            render json: events, except: [:created_at, :updated_at]
+
+           render json: events
+
+
         else
             render json: {error: "Event not found"}
         end         

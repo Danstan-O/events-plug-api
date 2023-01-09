@@ -1,5 +1,4 @@
 class AccountInfosController < ApplicationController
-    
     def create
         account_infos =  AccountInfo.create!(account_infos_params)
         # session[:user_id] = user.id

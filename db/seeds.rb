@@ -28,3 +28,4 @@ events2 = Event.create(name: "solFest", address: "1234-kimathi street", location
         start_date: "18/12/2022", end_date: "19/12/2022", start_time: "11 p.m", end_time: "chiew")
 
 
+

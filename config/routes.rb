@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :account_infos
   resources :checkouts
   resources :user_events
-  resources :events
+  resources :events, only: [:show, :index]
   resources :users
   post "/register", to: "users#create"
   post "/login", to: "sessions#create"

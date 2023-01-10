@@ -7,7 +7,7 @@ class EventsController < ApplicationController
 
         render json: events
 
-
+<
     end
 
     def show
@@ -15,6 +15,7 @@ class EventsController < ApplicationController
         if events
 
            render json: events
+
 
         else
             render json: {error: "Event not found"}
@@ -32,6 +33,5 @@ class EventsController < ApplicationController
         params.permit( :name, :image, :price, :address, :location, :category, :description, :start_date, :end_date, :start_time, :end_time)
         
     end
-
 
 end

@@ -5,7 +5,10 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
-  validates :password, presence: true
+    
+  
+  validates :password, presence: true, length: { minimum: 8 }
   validates :password_confirmation, presence: true
-  validates :role, presence: true
+  validates :role, presence: true, inclusion: { in: ["Admin", "Organizer", "User"] }
+
 end

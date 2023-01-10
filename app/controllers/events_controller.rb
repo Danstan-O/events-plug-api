@@ -7,6 +7,7 @@ class EventsController < ApplicationController
 
         render json: events
 
+
     end
 
     def show
@@ -15,15 +16,22 @@ class EventsController < ApplicationController
 
            render json: events
 
-
         else
             render json: {error: "Event not found"}
         end         
     end
 
-    # private
-    # def render_not_found_response(invalid)
-    #     # byebug
-    #     render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
-    # end
+    def create
+        events =  Event.create!(event_params)
+        
+        render json: events, status: :created
+    end
+
+    private
+    def event_params
+        params.permit( :name, :image, :price, :address, :location, :category, :description, :start_date, :end_date, :start_time, :end_time)
+        
+    end
+
+
 end

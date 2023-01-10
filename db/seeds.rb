@@ -4,6 +4,19 @@
 # Examples:
 #
 
+#   events = Event.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+#   Character.create(name: "Luke", movie: movies.first)
+
+
+#   movies = Movie.create([{ name: Star Wars }, { name: Lord of the Rings }])
+#   Character.create(name: Luke, movie: movies.first)
+
+
+#   events = Event.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+#   Character.create(name: "Luke", movie: movies.first)
+
+
+
 #   movies = Movie.create([{ name: Star Wars }, { name: Lord of the Rings }])
 #   Character.create(name: Luke, movie: movies.first)
 Event.destroy_all
@@ -31,3 +44,4 @@ events2 = Event.create!(name: "solFest", address: "1234-kimathi street", locatio
 events3 = Event.create!(name: "Sauti africa", address: "199-omwogo street", location: "kare4",
                         category: "general", description: "This is a general meeting bringing together all people interested in auditioning to become artists", like: :waah,
                         start_date: "18/12/2022", end_date: "19/12/2022", start_time: "11 p.m", end_time: "chiew")
+

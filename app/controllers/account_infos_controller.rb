@@ -8,7 +8,9 @@ class AccountInfosController < ApplicationController
 
     private
     def account_infos_params
-        params.permit(:first_name, :last_name, :email, :phone_number, :billing_address)
+
+        params.permit(:first_name, :last_name, :email, :phone_number, :billing_address, :user_id)
+
             # , :address_2, :city, :county)
     end
 end

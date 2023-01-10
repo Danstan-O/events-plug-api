@@ -1,5 +1,10 @@
 class SessionsController < ApplicationController
+
   # before_action :authorize
+
+  rescue_from ActiveRecord::RecordInvalid, with: :authorize
+
+
 
   def create
     user = User.find_by(email: params[:email])

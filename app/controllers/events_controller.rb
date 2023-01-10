@@ -7,6 +7,7 @@ class EventsController < ApplicationController
 
         render json: events
 
+<
     end
 
     def show

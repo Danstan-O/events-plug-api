@@ -1,7 +1,7 @@
 class CheckoutsController < ApplicationController
-  def index
-    render json: Checkout.all
-  end
+  # def index
+  #   render json: Checkout.all
+  # end
 
   def show
     user = User.find_by(id: session[:user_id])
@@ -12,14 +12,14 @@ class CheckoutsController < ApplicationController
     end
   end
 
-  def create
-    checkout = Checkout.create!(checkout_params)
-    render json: checkout
-  end
+  # def create
+  #   checkout = Checkout.create!(checkout_params)
+  #   render json: checkout
+  # end
 
-  private
+  # private
 
-  def checkout_params
-    params.permit(:first_name, :last_name, :email, :card_info, :expiry_date, :cvc)
-  end
+  # def checkout_params
+  #   params.permit(:first_name, :last_name, :email, :card_info, :expiry_date, :cvc)
+  # end
 end

@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :user_events
+  has_many :users, through: :user_events
 
   attr_accessor :first_name, :last_name, :card_info, :expiry_date, :cvc
   before_validation :split_name

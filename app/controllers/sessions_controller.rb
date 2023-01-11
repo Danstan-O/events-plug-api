@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :authorize
 
 
+
   def create
     user = User.find_by(email: params[:email])
     if user&.authenticate(params[:password])

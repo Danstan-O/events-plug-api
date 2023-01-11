@@ -7,10 +7,7 @@ class AccountInfosController < ApplicationController
 
     private
     def account_infos_params
-
-
         params.permit(:first_name, :last_name, :email, :phone_number, :billing_address, :user_id)
 
-           
     end
 end

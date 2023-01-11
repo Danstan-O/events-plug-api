@@ -2,19 +2,13 @@ class EventsController < ApplicationController
      rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
     def index
-        events = Event.all
-        
-        render json: events
-
-
+        render json: Event.all
     end
 
     def show
         events = Event.find_by(id: params[:id])
         if events
-
-           render json: events
-
+           render json: events, serializer: EventDetailsSerializer
         else
             render json: {error: "Event not found"}
         end         

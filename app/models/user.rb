@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :user_events
+  has_many :users, through: :user_events
+
+  has_many :users, through: :user_events
 
   has_many :users, through: :user_events
 
@@ -13,5 +16,5 @@ class User < ApplicationRecord
   validates :role, presence: true, inclusion: { in: ["Admin", "Organizer", "User"] }
 
 
-  
+
 end

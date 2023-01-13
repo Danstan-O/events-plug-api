@@ -6,25 +6,36 @@ class EventsController < ApplicationController
     end
 
     def show
-        events = Event.find_by(id: params[:id])
-        if events
-           render json: events, serializer: EventDetailsSerializer
-        else
-            render json: {error: "Event not found"}
+        event = Event.find(params[:id])
+        render json: event, serializer: EventDetailsSerializer        
+    end
         end         
     end
 
     def create
-        events =  Event.create!(event_params)
-        
-        render json: events, status: :created
+        event =  Event.create!(event_params)
+        session[:event_id] = event.id
+        render json: event, status: :created
+    end
+
+    def update
+        event = Event.find(params[:id])
+        event.update!(event_params)
+        render json: event,  status: :accepted
+    end
+
+    def destroy
+        event = Event.find(params[:id])
+        event.destroy
+        head :no_content
     end
 
     private
+     def render_not_found_response
+    render json: { errors: ["Event Not Found"] }, status: :not_found
+  end
+
     def event_params
         params.permit( :name, :image, :price, :address, :location, :category, :description, :start_date, :end_date, :start_time, :end_time)
-        
-    end
-
-
+    end   
 end

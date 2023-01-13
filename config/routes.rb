@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  resources :mpesas
   resources :account_infos
   resources :checkouts
   resources :user_events
 
-  resources :events, only: [:show, :index, :create]
+  resources :events
 
 
   resources :users
@@ -11,6 +12,11 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   get "/me", to: "users#show"
+
+  # routing for mpesa payment
+  post 'stkpush', to: 'mpesas#stkpush'
+  post 'stkquery', to: 'mpesas#stkquery'
+  
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :checkouts
   resources :user_events
 
-  resources :events, only: [:show, :index, :create]
+  resources :events
 
 
   resources :users

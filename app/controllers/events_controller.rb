@@ -1,15 +1,13 @@
-
-<<<<<<< HEAD
-=======
-    def index
+class EventsController < ApplicationController
+   def index
         render json: Event.all
     end
 
     def show
         event = Event.find(params[:id])
         render json: event, serializer: EventDetailsSerializer        
-    end
-        end         
+    
+               
     end
 
     def create
@@ -39,4 +37,3 @@
         params.permit( :name, :image, :price, :address, :location, :category, :description, :start_date, :end_date, :start_time, :end_time)
     end   
 end
->>>>>>> 8c85aab569c4bbf3346427a729c5c9d9c81e346d

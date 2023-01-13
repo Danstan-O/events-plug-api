@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mpesas
   resources :account_infos
   resources :checkouts
   resources :user_events

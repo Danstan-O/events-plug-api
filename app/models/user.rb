@@ -3,15 +3,16 @@ class User < ApplicationRecord
   has_many :user_events
   has_many :users, through: :user_events
 
-  has_many :users, through: :user_events
-
-  validates :name, presence: true
+  attr_accessor :first_name, :last_name, :card_info, :expiry_date, :cvc
+  before_validation :split_name
+  validates :first_name, :last_name, presence: true
   validates :email, presence: true, uniqueness: true
-    
-  
-  validates :password, presence: true, length: { minimum: 8 }
-  validates :password_confirmation, presence: true
+  validates :password, :password_confirmation, presence: true, length: { minimum: 8 }
   validates :role, presence: true, inclusion: { in: ["Admin", "Organizer", "User"] }
 
-
+  def split_name
+    username = self.name.split(" ")
+    self.first_name = username.first
+    self.last_name = username.last
+  end
 end

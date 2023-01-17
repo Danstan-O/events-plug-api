@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   has_secure_password
   has_many :user_events, dependent: :destroy
   has_many :events, through: :user_events
@@ -15,4 +16,5 @@ class User < ApplicationRecord
     self.first_name = username.first
     self.last_name = username.last
   end
+
 end

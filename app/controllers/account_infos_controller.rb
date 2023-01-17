@@ -1,4 +1,5 @@
 class AccountInfosController < ApplicationController
+    def show
     def create
         account_infos =  AccountInfo.create!(account_infos_params)
 

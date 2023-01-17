@@ -1,6 +1,8 @@
 class AccountInfosController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
+    def index
         render json: AccountInfo.all
+      end
     def show
         event = AccountInfo.find(params[:id])
         render json: event     

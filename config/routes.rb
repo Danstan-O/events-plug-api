@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  resources :likes
-  resources :reservations
+  resources :likes, only: [:index, :create, :destroy]
+  resources :reservations, only: [:index, :create, :destroy]
   resources :mpesas
   resources :account_infos
-  resources :checkouts
-  resources :user_events
+  resources :checkouts, only: [:index, :create, :show]
+  resources :user_events, only: [:create]
 
   resources :events
   
-  resources :users
+  resources :users, only: [:index, :create, :show]
   post "/users/:id/events", to: "events#create" 
   post "/register", to: "users#create"
   post "/login", to: "sessions#create"

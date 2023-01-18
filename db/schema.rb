@@ -20,18 +20,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_18_133040) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "account_infos", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.string "phone_number"
-    t.string "billing_address"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_account_infos_on_user_id"
-  end
-
   create_table "checkouts", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -105,12 +93,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_18_133040) do
     t.string "name"
     t.string "email"
     t.string "role"
+    t.string "phone_number"
+    t.string "card_number"
+    t.string "cvv"
+    t.string "expiry_date"
+    t.string "city"
+    t.string "billing_address"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "account_infos", "users"
   add_foreign_key "checkouts", "users"
   add_foreign_key "events", "users"
   add_foreign_key "likes", "events"

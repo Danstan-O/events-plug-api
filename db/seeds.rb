@@ -1,14 +1,14 @@
 # seeding user data
-user1 = User.create!(name: "Admin Adam", email: "admin@example.com", role: "Admin", password: "admin1234", password_confirmation: "admin1234")
-user2 = User.create!(name: "Sammie Sam", email: "SamOrganizer@example.com", role: "Organizer", password: "organizer1234", password_confirmation: "organizer1234")
-user3 = User.create!(name: "Mary Marian", email: "mary@example.com", role: "User", password: "mary1234", password_confirmation: "mary1234")
-user4 = User.create!(name: "John Smith", email: "smithj@example.com", role: "User", password: "smith1234", password_confirmation: "smith1234")
-user5 = User.create!(name: "Charles Oduor", email: "charles@example.com", role: "User", password: "charles1234", password_confirmation: "charles1234")
-user6 = User.create!(name: "Amos Okumu", email: "AmosOrganizer@example.com", role: "Organizer", password: "amos1234", password_confirmation: "amos1234")
-user7 = User.create!(name: "Brayarn Wafula", email: "Wafula@example.com", role: "User", password: "wafula1234", password_confirmation: "wafula1234")
-user8 = User.create!(name: "Dennis Osoro", email: "Odennis@example.com", role: "User", password: "dennis1234", password_confirmation: "dennis1234")
-user9 = User.create!(name: "Danteh Wamalwa", email: "DantehOrganizer@example.com", role: "Organizer", password: "danteh1234", password_confirmation: "danteh1234")
-user10 = User.create!(name: "Amos Langat", email: "LangatOrganizer@example.com", role: "Organizer", password: "amos1234", password_confirmation: "amos1234")
+user1 = User.create!(name: "Admin Adam", email: "admin@example.com", role: "Admin",  password: "admin1234", password_confirmation: "admin1234", card_number: "sguuisghi", cvv: "124", expiry_date: "24/23", billing_address: "124-kariobangi", city: "Nairobi", phone_number: "0298828818")
+user2 = User.create!(name: "Sammie Sam", email: "SamOrganizer@example.com", role: "Organizer", password: "organizer1234", password_confirmation: "organizer1234", card_number: "sguuisghi", cvv: "124", expiry_date: "24/23", billing_address: "124-kariobangi", city: "Nairobi", phone_number: "0298828818")
+user3 = User.create!(name: "Mary Marian", email: "mary@example.com", role: "User", password: "mary1234", password_confirmation: "mary1234", card_number: "sguuisghi", cvv: "124", expiry_date: "24/23", billing_address: "124-kariobangi", city: "Nairobi", phone_number: "0298828818")
+user4 = User.create!(name: "John Smith", email: "smithj@example.com", role: "User", password: "smith1234", password_confirmation: "smith1234", card_number: "sguuisghi", cvv: "124", expiry_date: "24/23", billing_address: "124-kariobangi", city: "Nairobi", phone_number: "0298828818")
+user5 = User.create!(name: "Charles Oduor", email: "charles@example.com", role: "User", password: "charles1234", password_confirmation: "charles1234", card_number: "sguuisghi", cvv: "124", expiry_date: "24/23", billing_address: "124-kariobangi", city: "Nairobi", phone_number: "0298828818")
+user6 = User.create!(name: "Amos Okumu", email: "AmosOrganizer@example.com", role: "Organizer", password: "amos1234", password_confirmation: "amos1234", card_number: "sguuisghi", cvv: "124", expiry_date: "24/23", billing_address: "124-kariobangi", city: "Nairobi", phone_number: "0298828818")
+user7 = User.create!(name: "Brayarn Wafula", email: "Wafula@example.com", role: "User", password: "wafula1234", password_confirmation: "wafula1234", card_number: "sguuisghi", cvv: "124", expiry_date: "24/23", billing_address: "124-kariobangi", city: "Nairobi", phone_number: "0298828818")
+user8 = User.create!(name: "Dennis Osoro", email: "Odennis@example.com", role: "User", password: "dennis1234", password_confirmation: "dennis1234", card_number: "sguuisghi", cvv: "124", expiry_date: "24/23", billing_address: "124-kariobangi", city: "Nairobi", phone_number: "0298828818")
+user9 = User.create!(name: "Danteh Wamalwa", email: "DantehOrganizer@example.com", role: "Organizer", password: "danteh1234", password_confirmation: "danteh1234", card_number: "sguuisghi", cvv: "124", expiry_date: "24/23", billing_address: "124-kariobangi", city: "Nairobi", phone_number: "0298828818")
+user10 = User.create!(name: "Amos Langat", email: "LangatOrganizer@example.com", role: "Organizer", password: "amos1234", password_confirmation: "amos1234", card_number: "sguuisghi", cvv: "124", expiry_date: "24/23", billing_address: "124-kariobangi", city: "Nairobi", phone_number: "0298828818")
 
 
 # seeding events data
@@ -128,11 +128,5 @@ reservations28 = Reservation.create!(user_id: user5.id, event_id: events8.id)
 reservations29 = Reservation.create!(user_id: user7.id, event_id: events9.id)
 reservations30 = Reservation.create!(user_id: user3.id, event_id: events10.id)
 
-# seeding account information data
-account_infos1 = AccountInfo.create!(first_name: "Sammie", last_name: "Sam", email: "SamOrganizer@example.com", phone_number: "0756713263", billing_address: "145-karatina", user_id: user2.id)
-account_infos2 = AccountInfo.create!(first_name: "Amos", last_name: "Okumu", email: "AmosOrganizer@example.com", phone_number: "07567167723", billing_address: "145-karatina", user_id: user6.id)
-account_infos3 = AccountInfo.create!(first_name: "Danteh", last_name: "Wamalwa", email: "DantehOrganizer@example.com", phone_number: "075667678263", billing_address: "122-karachuonyo", user_id: user9.id)
-account_infos3 = AccountInfo.create!(first_name: "Amos", last_name: "Langat", email: "LangatOrganizer@example.com", phone_number: "075677989263", billing_address: "113-North Langas", user_id: user10.id)
 
 
-# static data to see if stkpush works

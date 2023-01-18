@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   resources :events
   
-  resources :users, only: [:index, :create, :show]
+  resources :users
+  put "/users/:id", to: "users#update"
   post "/users/:id/events", to: "events#create" 
   post "/register", to: "users#create"
   post "/login", to: "sessions#create"

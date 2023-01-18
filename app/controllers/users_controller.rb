@@ -15,9 +15,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    user = User.find(params[:id])
+    user.update!(user_params)
+    render json: user, status: :accepted
+end
+
   def user_details
-user_details = User.find(params[:id])
-render json: user_details, status: :ok
+    user_details = User.find(params[:id])
+    render json: user_details, serializer: UserDetailsSerializer , status: :ok
   end
 
   def show
@@ -35,6 +41,6 @@ render json: user_details, status: :ok
   end
 
   def user_params
-    params.permit(:name, :email, :role, :password, :password_confirmation)
+    params.permit(:name, :email,:phone_number, :role, :password, :password_confirmation, :expiry_date, :city, :billing_address, :cvv, :card_number)
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_12_152947) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_18_133040) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -56,10 +56,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_12_152947) do
     t.string "end_date"
     t.string "start_time"
     t.string "end_time"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price"
     t.string "image"
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_likes_on_event_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "mpesas", force: :cascade do |t|
@@ -70,6 +81,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_12_152947) do
     t.string "mpesaReceiptNumber"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_reservations_on_event_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "user_events", force: :cascade do |t|
@@ -92,6 +112,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_12_152947) do
 
   add_foreign_key "account_infos", "users"
   add_foreign_key "checkouts", "users"
+  add_foreign_key "events", "users"
+  add_foreign_key "likes", "events"
+  add_foreign_key "likes", "users"
+  add_foreign_key "reservations", "events"
+  add_foreign_key "reservations", "users"
   add_foreign_key "user_events", "events"
   add_foreign_key "user_events", "users"
 end

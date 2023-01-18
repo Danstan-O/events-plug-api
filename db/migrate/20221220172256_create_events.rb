@@ -11,6 +11,7 @@ class CreateEvents < ActiveRecord::Migration[7.0]
       t.string :end_date
       t.string :start_time
       t.string :end_time
+      t.belongs_to :user, null: false, foreign_key: true
 
       t.timestamps
     end

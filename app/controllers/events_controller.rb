@@ -29,7 +29,6 @@ class EventsController < ApplicationController
   end
 
   private
-
   def render_not_found_response
     render json: { errors: ["Event Not Found"] }, status: :not_found
   end

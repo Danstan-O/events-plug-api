@@ -30,7 +30,6 @@ render json: user_details, status: :ok
   end
 
   private
-
   def render_not_found_response
     render json: { errors: ["User Not Found"] }, status: :not_found
   end

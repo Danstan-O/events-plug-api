@@ -88,7 +88,6 @@ class MpesasController < ApplicationController
     end
 
     private
-
     def generate_access_token_request
         @url = "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials"
         @consumer_key = ENV['MPESA_CONSUMER_KEY']

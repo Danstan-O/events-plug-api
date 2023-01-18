@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   attr_accessor :first_name, :last_name, :card_info, :expiry_date, :cvc
   # before_validation :split_name
-  validates :first_name, :last_name, presence: true
+  # validates :first_name, :last_name, presence: true
   validates :email, presence: true, uniqueness: true
   validates :password, :password_confirmation, presence: true, length: { minimum: 8 }
   validates :role, presence: true, inclusion: { in: ["Admin", "Organizer", "User"] }

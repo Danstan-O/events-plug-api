@@ -56,7 +56,7 @@ events9 = Event.create!(name: "code wars",user_id: user10.id, price: 0, address:
                         start_date: "25/8/2022", image: "https://res.cloudinary.com/dghmulj4i/image/upload/v1673433053/event-plug/code-wars_ihub_kkzcnw.png",
                         end_date: "25/8/2022", start_time: "11:00 a.m", end_time: "3:00 p.m")
 
-events10 = Event.create!(name: "archery",user_id: user2.id, price: 800, address: "24552-naivasha", location: "gilgil", category: "Hiking and Adventure",
+events10 = Event.create!(name: "archery",user_id: user3.id, price: 800, address: "24552-naivasha", location: "gilgil", category: "Hiking and Adventure",
                          description: "this event is for the lovers of archery and those who would like to learn how to archer. come one, come all", like: false,
                          image: "https://res.cloudinary.com/dghmulj4i/image/upload/v1673433046/event-plug/archery_sxmwgw.png", start_date: "18/12/2022", end_date: "19/12/2022",
                          start_time: "2:00 am", end_time: "6:00 pm")
@@ -93,6 +93,40 @@ user_events27 = UserEvent.create!(user_id: user4.id, event_id: events7.id)
 user_events28 = UserEvent.create!(user_id: user5.id, event_id: events8.id)
 user_events29 = UserEvent.create!(user_id: user7.id, event_id: events9.id)
 user_events30 = UserEvent.create!(user_id: user3.id, event_id: events10.id)
+
+
+
+# reservations
+reservations1 = Reservation.create!(user_id: user6.id, event_id: events1.id)
+reservations2 = Reservation.create!(user_id: user2.id, event_id: events2.id)
+reservations3 = Reservation.create!(user_id: user9.id, event_id: events3.id)
+reservations4 = Reservation.create!(user_id: user6.id, event_id: events4.id)
+reservations5 = Reservation.create!(user_id: user10.id, event_id: events5.id)
+reservations6 = Reservation.create!(user_id: user2.id, event_id: events6.id)
+reservations7 = Reservation.create!(user_id: user6.id, event_id: events7.id)
+reservations8 = Reservation.create!(user_id: user9.id, event_id: events8.id)
+reservations9 = Reservation.create!(user_id: user10.id, event_id: events9.id)
+reservations10 = Reservation.create!(user_id: user3.id, event_id: events10.id)
+reservations11 = Reservation.create!(user_id: user4.id, event_id: events1.id)
+reservations12 = Reservation.create!(user_id: user5.id, event_id: events2.id)
+reservations13 = Reservation.create!(user_id: user7.id, event_id: events3.id)
+reservations14 = Reservation.create!(user_id: user8.id, event_id: events4.id)
+reservations15 = Reservation.create!(user_id: user3.id, event_id: events5.id)
+reservations16 = Reservation.create!(user_id: user4.id, event_id: events6.id)
+reservations17 = Reservation.create!(user_id: user5.id, event_id: events7.id)
+reservations18 = Reservation.create!(user_id: user7.id, event_id: events8.id)
+reservations19 = Reservation.create!(user_id: user8.id, event_id: events9.id)
+reservations20 = Reservation.create!(user_id: user2.id, event_id: events10.id)
+reservations21 = Reservation.create!(user_id: user3.id, event_id: events1.id)
+reservations22 = Reservation.create!(user_id: user4.id, event_id: events2.id)
+reservations23 = Reservation.create!(user_id: user5.id, event_id: events3.id)
+reservations24 = Reservation.create!(user_id: user6.id, event_id: events4.id)
+reservations25 = Reservation.create!(user_id: user7.id, event_id: events5.id)
+reservations26 = Reservation.create!(user_id: user8.id, event_id: events6.id)
+reservations27 = Reservation.create!(user_id: user4.id, event_id: events7.id)
+reservations28 = Reservation.create!(user_id: user5.id, event_id: events8.id)
+reservations29 = Reservation.create!(user_id: user7.id, event_id: events9.id)
+reservations30 = Reservation.create!(user_id: user3.id, event_id: events10.id)
 
 # seeding account information data
 account_infos1 = AccountInfo.create!(first_name: "Sammie", last_name: "Sam", email: "SamOrganizer@example.com", phone_number: "0756713263", billing_address: "145-karatina", user_id: user2.id)

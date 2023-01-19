@@ -1,165 +1,317 @@
-# README
+# **Event Plug API**
 
 
-# creating a new application
-
-We created a new application that we would use for the 
-project
-
-# Generating resources
-
-We ran the different rails generators to be able to generate resources for;
-
-`account information`
-
-`checkout`
-
-`events`
-
-`sessions`
-
-`user_events`
-
-`users`
+### _By Brayarn Oduor & Danstan Oduor_
 
 
-# Models
-
-We then created the following relationships in our models:
--A `Merchant` has many `Merchandizes`
-
-- A `Merchandize` belongs to a  `Merchant`
-
-- A `Merchandize` has many  `Reviews`
-
-- A `Buyer` has many  `Reviews`
-
-- A `Merchandizes` has many `Buyer` through  `Reviews`
-
-- A `Buyer` has many `Merchandizes` through  `Reviews`
-
-- A `Merchandize` belongs to a  `Merchant`
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
 
-After that I did the migrations for the database tables that I had created.
-
-# Seeding
-I then created the seeds and seeded them to generate data that I was going to use and see if my application was working as expected.
-
-# Validations
-I added the following validation to the `Buyer` model:
-
--A `username`, `password` and `email` were to be present. 
-
-I also added the validation for `Merchandize` where:
-
-- `category` was to be one of the following values 'Men', 'Women', 'Kids', 'Unisex' 
-
-I then added the following validation to the `Merchandize` model:
-
--A `name`, `password` and `email` were to be present.
-
-- The `email` was also supposed to be unique.
+## **Description**
 
 
+Event Plug is a RESTful API that enables regular users to interact with events, organizers to create and manage events, and admins to manage events. The user can like and add events to favourites for future use and can also pay for an event using the mpesa application.
 
-# Routes
-I set up the following routes and made sure that they return
 
- JSON data in the format below along with their 
- 
- appropriate HTTP verb.
+## Initial login credentials
 
-GET /merchandizes
 
- It was to return JSON data in the format below:
-
+```json
 {
-    "id": 1,
-    "name": "Unisex-demin-jacket",
-    "category": "Unisex",
-    "image_url": "https://res.cloudinary.com/dghmulj4i/image/upload/v1670396461/farm%20apps/the-clothe-line/Unisex-demin-jacket_ry2mbi.png",
-    "merchant_id": 1,
-    "price": 165
-  },
-  {
-    "id": 2,
-    "name": "brown beatiful dress",
-    "category": "Women",
-    "image_url": "https://res.cloudinary.com/dghmulj4i/image/upload/v1670403650/farm%20apps/the-clothe-line/istockphoto-1415133974-170667a_scffdp.jpg",
-    "merchant_id": 1,
-    "price": 165
-  },
-  {
-    "id": 3,
-    "name": "summer-jacket",
-    "category": "Men",
-    "image_url": "https://res.cloudinary.com/dghmulj4i/image/upload/v1670396459/farm%20apps/the-clothe-line/summer-jacket_phqc8k.png",
-    "merchant_id": 2,
-    "price": 125
-  }
-  ]
- 
-
-GET /merchandizes/:id
-
-If the `Hero` exists in our database, the JSON data was to be returned in the format below:
-
- 
-
-{
-  "id": 1,
-  "name": "Unisex-demin-jacket",
-  "category": "Unisex",
-  "image_url": "https://res.cloudinary.com/dghmulj4i/image/upload/v1670396461/farm%20apps/the-clothe-line/Unisex-demin-jacket_ry2mbi.png",
-  "merchant_id": 1,
-  "price": 165
+ "email": "admin@example.com",
+ "password": "admin1234"
 }
+```
 
 
- GET /merchants
-
- It was to display the merchants and different merchandizes sold by that merchant
+# Setup Requirements
 
 
-  {
-    "id": 1,
-    "name": "Jonah Bill",
-    "profile": "Bill One the proficient",
-    "email": "Bill@gmail.com",
-    "password_digest": "$2a$12$AhqfF/aeZHvnCisARNqk0u.YHFuiFn7Gu9ANnhbbS0Rnwf79jqrpe",
-    "merchandizes": [
-      {
-        "id": 1,
-        "name": "Unisex-demin-jacket",
-        "image_url": "https://res.cloudinary.com/dghmulj4i/image/upload/v1670396461/farm%20apps/the-clothe-line/Unisex-demin-jacket_ry2mbi.png",
-        "category": "Unisex",
-        "price": 165,
-        "merchant_id": 1,
-        "created_at": "2022-12-08T12:06:11.000Z",
-        "updated_at": "2022-12-08T12:06:11.000Z"
-      },
-      {
-        "id": 2,
-        "name": "brown beatiful dress",
-        "image_url": "https://res.cloudinary.com/dghmulj4i/image/upload/v1670403650/farm%20apps/the-clothe-line/istockphoto-1415133974-170667a_scffdp.jpg",
-        "category": "Women",
-        "price": 165,
-        "merchant_id": 1,
-        "created_at": "2022-12-08T12:06:11.007Z",
-        "updated_at": "2022-12-08T12:06:11.007Z"
-      }
+   - Clone the repo => $ git clone git@github.com:Danstan-O/events-plug-api.git
+   - Ruby v.2.7.4
+   - PostgreSQL v12
+   - Thunder Client Extension or Postman (to test the API)
+   - Railway.app or render cli to deploy the API
 
 
- GET /merchants/:id
+# Setup Installation
 
-If someone was to try and get only one merrchant before logging in it was to throw an error:
+
+       After cloning the repo, run the following commands:
+       - cd <folder-directory>
+       - $ sudo -u postgres createuser [new_user]
+       - sudo -u postgres psql postgres=# \password [new_user]
+
+
+      * Open Postman or Thunder Client to try out the API endpoints
+
+
+      * Deploy to railway.app or render
+
+
+# Endpoints
+
+
+- Root endpoint:
+ - [https://localhost:3000](https://localhost:3000)
+ - [https://event-plug.onrender.com/](https://event-plug.onrender.com/)
+
+
+> POST
+
+
+`/register`
+
+
+- Create a new user
+
+
+```json
+{
+ {
+   "name": "string",
+   "email": "string",
+   "role": "string",
+   "password": "string",
+   "password_confirmation": "string"
+ }
+}
+```
+
+
+> POST
+
+
+`/login`
+
+
+- Create a session
+
+
+```json
+{
+ "email": "string",
+ "password": "string"
+}
+```
+
+
+> GET
+
+
+`/users`
+
+
+- Get Users
+
+
+```json
+[
+ {
+   "id": 1,
+   "name": "Admin Adam",
+   "email": "admin@example.com",
+   "role": "Admin"
+ },
+ {
+   "id": 2,
+   "name": "Sammie Sam",
+   "email": "SamOrganizer@example.com",
+   "role": "Organizer"
+ },
+ {
+   "id": 3,
+   "name": "Mary Marian",
+   "email": "mary@example.com",
+   "role": "User"
+ },
+ {
+   "id": 4,
+   "name": "John Smith",
+   "email": "smithj@example.com",
+   "role": "User"
+ }
+]
+```
+
+
+> GET
+
+
+`/events`
+
+
+- Get all events
+
+
+```json
+[
+{
+
+
+   "id": 1,
+   "name": "sun set viewing",
+   "start_date": "25/8/2022",
+   "location": "lalanasi",
+   "price": 123,
+   "image": "https://res.cloudinary.com/dghmulj4i/image/upload/v1673433069/event-plug/Screenshot_from_2023-01-11_13-15-10_j45oyt.png"
+
+
+},
+{
+   "id": 2,
+   "name": "swimming competition",
+   "start_date": "18/12/2022",
+   "location": "kasarani stadium",
+   "price": null,
+   "image": "https://res.cloudinary.com/dghmulj4i/image/upload/v1673433069/event-plug/swimming_jc0tne.png"
+},
+{
+   "id": 3,
+   "name": "Ruger concert",
+   "start_date": "18/12/2022",
+   "location": "kicc",
+   "price": null,
+   "image": "https://res.cloudinary.com/dghmulj4i/image/upload/v1673433066/event-plug/ruger-live-performance_q3mzfv.png"
+},
+{
+   "id": 4,
+   "name": "horse riding",
+   "start_date": "25/8/2022",
+   "location": "ngong",
+   "price": 123,
+   "image": "https://res.cloudinary.com/dghmulj4i/image/upload/v1673433065/event-plug/horse-riding-ngong-racecourse_ktsvrz.png"
+},
+{
+   "id": 5,
+   "name": "solFest",
+   "start_date": "18/12/2022",
+   "location": "kicc",
+   "price": null,
+   "image": "https://res.cloudinary.com/dghmulj4i/image/upload/v1673433066/event-plug/sautisole-music-consert_hv0ua2.png"
+},
+....
+]
+
 
 ```
 
-{ 
-  "error": "Not authorized"
-}
+
+> GET
+
+
+`/events/{:id}`
+
+
+- Get events by id
+
+
+```json
+[
+{
+ "id": 1,
+ "name": "sun set viewing",
+ "start_date": "25/8/2022",
+ "location": "lalanasi",
+ "price": 123,
+ "image": "https://res.cloudinary.com/dghmulj4i/image/upload/v1673433069/event-plug/Screenshot_from_2023-01-11_13-15-10_j45oyt.png",
+ "likes": [
+
+
+ ],
+ "reservations": [
+   {
+     "id": 1
+   },
+   {
+     "id": 11
+   },
+   {
+     "id": 21
+   }
+ ],
+ "user": {
+   "id": 6,
+   "name": "Amos Okumu",
+   "email": "AmosOrganizer@example.com",
+   "role": "Organizer"
+ }
+},
+{
+ "id": 2,
+ "name": "swimming competition",
+ "start_date": "18/12/2022",
+ "location": "kasarani stadium",
+ "price": 500,
+ "image": "https://res.cloudinary.com/dghmulj4i/image/upload/v1673433069/event-plug/swimming_jc0tne.png",
+ "likes": [],
+ "reservations": [
+   {
+     "id": 2
+   },
+   {
+     "id": 12
+   },
+   {
+     "id": 22
+   }
+ ],
+ "user": {
+   "id": 2,
+   "name": "Sammie Sam",
+   "email": "SamOrganizer@example.com",
+   "role": "Organizer"
+ }
+},
+....
+]
+```
+
+
+## **_Tools Used_**
+
+
+- **main:** _ruby on rails, postgresql_
+- **other dependencies:** _bcrypt, cookies, sessions, & active_model_serializers_
+
+
+## Known Bugs
+
+
+- No known bugs to this point.
+
+
+### Postgres fix
+
 
 ```
+$ sudo apt install postgresql postgresql-contrib libpq-dev
+```
+
+
+## License
+
+
+MIT License
+
+
+Copyright (c) 2023 Brayarn Oduor & Danstan Oduor
+
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
+
+
+## Support and Contact details
+
+
+To make a contribution to the code used or any suggestions you can <a href="brayarn.oduor@student.moringaschool.com">Send a Mail </a> or <a href="mailto:danstan.oduor@moringaschool.com"> Contact us</a>
+
+
 

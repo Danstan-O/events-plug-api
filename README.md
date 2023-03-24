@@ -53,12 +53,12 @@ Event Plug is a RESTful API that enables regular users to interact with events, 
 # Endpoints
 
 
-- Root endpoint:
- - [https://event-plug.onrender.com/](https://event-plug.onrender.com/)
+### **Backend api**
+ * <a href="https://event-plug.onrender.com/"> backend api </a>
 ### **Front end URL**
 * <a href="https://eventplugs.vercel.app/"> Events Plug</a>
 
-### ** code to frontend **
+### **code to frontend**
 * <a href="https://github.com/WMCharles/Events-Project"> Link to frontend code </a>
 
 

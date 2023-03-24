@@ -54,8 +54,12 @@ Event Plug is a RESTful API that enables regular users to interact with events, 
 
 
 - Root endpoint:
- - [https://localhost:3000](https://localhost:3000)
  - [https://event-plug.onrender.com/](https://event-plug.onrender.com/)
+### **Front end URL**
+* <a href="https://eventplugs.vercel.app/"> Events Plug</a>
+
+### ** code to frontend **
+* <a href="https://github.com/WMCharles/Events-Project"> Link to frontend code </a>
 
 
 > POST
@@ -311,7 +315,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## Support and Contact details
 
 
-To make a contribution to the code used or any suggestions you can <a href="brayarn.oduor@student.moringaschool.com">Send a Mail </a> or <a href="mailto:danstan.oduor@moringaschool.com"> Contact us</a>
+To make a contribution to the code used or any suggestions you can <a href="brayarn.oduor@student.moringaschool.com">Send a Mail </a> or <a href="mailto:oduordanstan@gmail.com"> Contact us</a>
 
 
 
